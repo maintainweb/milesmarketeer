@@ -22,7 +22,21 @@ var Roots = {
   // All pages
   common: {
     init: function() {
-      // JavaScript to be fired on all pages
+      var options = {
+        autoPlay: true,
+        cycle: true,
+        animateStartingFrameIn: false,
+        autoPlayDelay: 4000
+      };
+      var sequence = $("#sequence").sequence(options).data("sequence");
+
+      $('.page-header').affix({
+        offset: {
+          top: 60,
+          bottom: 300
+        }
+      });
+
     }
   },
   // Home page
