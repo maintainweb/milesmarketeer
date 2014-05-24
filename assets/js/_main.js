@@ -30,11 +30,12 @@ var Roots = {
       };
       var sequence = $("#sequence").sequence(options).data("sequence");
 
-      $('.page-header').affix({
-        offset: {
-          top: 60,
-          bottom: 300
-        }
+      $.stellar({
+        horizontalOffset: 0,
+        verticalOffset: 0,
+        responsive: true,
+        scrollProperty: 'scroll',
+        positionProperty: 'position'
       });
 
     }

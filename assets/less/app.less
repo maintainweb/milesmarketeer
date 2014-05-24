@@ -28,7 +28,7 @@ body.singular {
    ========================================================================== */
 
 .navbar-clear {
-   background-color: fade(@navbar-default-bg, 10%);
+   background-color: fade(@navbar-default-bg, 40%);
 }
 
 .banner {
@@ -63,14 +63,36 @@ body.singular {
    Content
    ========================================================================== */
 
+@content-padding-top: (@navbar-height * 1.3);
+@content-padding-bottom: (@navbar-height * 0.3);
+
 .content {
-   @content-padding-top: (@navbar-height * 1.3);
-   @content-padding-bottom: (@navbar-height * 0.3);
    padding-top: round(@content-padding-top);
    padding-bottom: round(@content-padding-bottom);
 }
 
-
+section.single-page-section {
+   min-height: 500px;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: 0 0; // must be 0 0 if using stellar.js
+   //background-attachment: fixed;
+   background-attachment: scroll;
+   position: relative;
+   top: 0;
+   left: 0;
+   display: block;
+   margin-left: -(@grid-gutter-width * 0.5);
+   margin-right: -(@grid-gutter-width * 0.5);
+   &:first-of-type {
+      margin-top: -(@content-padding-top * 1.0);
+   }
+   .jumbotron {
+      .main-image {
+         .center-block;
+      }
+   }
+}
 
 /* ==========================================================================
    Primary Content
