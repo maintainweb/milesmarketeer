@@ -1,6 +1,6 @@
-/*!
- * MilesMarketeer 1.0
- */
+/* ==========================================================================
+   Base
+   ========================================================================== */
 
 @import "bootstrap/bootstrap.less";
 @import "sequence.less";
@@ -9,7 +9,11 @@
    Base
    ========================================================================== */
 
-body { }
+body.logged-in.admin-bar {
+   .navbar-fixed-top {
+      top: 32px;
+   }
+}
 
 body.singular {
    .wrap.container {
@@ -18,8 +22,34 @@ body.singular {
       position: relative;
    }
 }
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.navbar-clear {
+   background-color: fade(@navbar-default-bg, 10%);
+}
+
+.banner {
+   .navbar-brand{
+      @brand-height: (@navbar-height - 30px);
+      @brand-width: (@navbar-height * 2.2);
+      .size(@brand-width; @brand-height);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      .text-hide();
+      .center-block();
+      @calc-margin: (@navbar-height - @brand-height);
+      @margin-top: (@calc-margin * 0.25);
+      margin-top: round(@margin-top);
+      background-color: transparent;
+   }
+}
+
 /*
-.page-header.affix {
+.banner.affix {
    top: 50px;
    padding-bottom: 9px;
    margin: 0 0 20px;
@@ -27,19 +57,18 @@ body.singular {
 }
 */
 
-/* ==========================================================================
-   Header
-   ========================================================================== */
-
-.banner { }
-
 
 
 /* ==========================================================================
    Content
    ========================================================================== */
 
-.content { }
+.content {
+   @content-padding-top: (@navbar-height * 1.3);
+   @content-padding-bottom: (@navbar-height * 0.3);
+   padding-top: round(@content-padding-top);
+   padding-bottom: round(@content-padding-bottom);
+}
 
 
 
