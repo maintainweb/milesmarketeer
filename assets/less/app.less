@@ -27,11 +27,15 @@ body.singular {
    Header
    ========================================================================== */
 
-.navbar-clear {
-   background-color: fade(@navbar-default-bg, 40%);
-}
-
 .banner {
+   .navbar-clear {
+      background-color: fade(@navbar-default-bg, 40%);
+      .transition(0.5s 0 all ease);
+      &.affix {
+         background-color: fade(@navbar-default-bg, 90%);
+         .transition(0.5s 0 all ease);
+      }
+   }
    .navbar-brand{
       @brand-height: (@navbar-height - 30px);
       @brand-width: (@navbar-height * 2.2);
@@ -74,10 +78,11 @@ body.singular {
 section.single-page-section {
    min-height: 500px;
    background-size: cover;
-   background-repeat: no-repeat;
+   background-repeat: repeat-y;
    background-position: 0 0; // must be 0 0 if using stellar.js
    //background-attachment: fixed;
    background-attachment: scroll;
+   overflow-y: visible;
    position: relative;
    top: 0;
    left: 0;
