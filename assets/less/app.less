@@ -64,18 +64,18 @@
 
 // WebKit
 @-webkit-keyframes sky-animation {
-  from  { background-position: 100px 0; }
+  from  { background-position: 0 100%; }
   to    { background-position: 0 0; }
 }
 
 // Spec and IE10+
 @keyframes sky-animation {
-  from  { background-position: 100px 0; }
+  from  { background-position: 0 100%; }
   to    { background-position: 0 0; }
 }
 
 .sky-animation {
-  .animation(sky-animation 4s linear infinite alternate);
+  .animation(sky-animation 14s linear infinite alternate);
 }
 
 /* ==========================================================================
