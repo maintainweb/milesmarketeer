@@ -1,14 +1,13 @@
-<?php 
-        $image = get_sub_field('image');
-         
-        if( !empty($image) ): 
+<?php
+  $image = get_sub_field('image');
+        if( !empty($image) ):
 
           // vars
           $url = $image['url'];
           $title = $image['title'];
           $alt = $image['alt'];
           $caption = $image['caption'];
-         
+
           // sizes
           $size = 'large';
           $large = $image['sizes'][ $size ];

@@ -8,30 +8,22 @@ $video = get_sub_field('video');
 $link = get_sub_field('link');
 
 get_template_part('templates/content', 'section-background'); ?>
-<section class="single-page-section single-page-section-jumbotron single-page-section-<?php echo $r; ?>" data-stellar-background-ratio="2" data-stellar-horizontal-offset="15" data-stellar-vertical-offset="500">
+<section class="single-page-section single-page-section-jumbotron single-page-section-<?php echo $r; ?>" <?php get_template_part('templates/data', 'stellar'); ?>>
     <div class="container">
-        <div class="jumbotron">
-            <h1><?php echo $heading; ?></h1>
-            <p class="lead"><?php echo $lead; ?></p>
-
-                <?php if( $link ): 
-                 
-                        // override $post
-                        $post = $link;
-                        setup_postdata( $post ); 
-                 
-                ?>
-
-                <a class="main-image" href="<?php the_permalink(); ?>">
-
-                <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
-
-                        <?php get_template_part('templates/content', 'img-responsive'); ?>
-
-                <?php if( $link ): ?>
-                </a>
-            <?php endif; ?>
+      <div class="jumbotron">
+        <h1><?php echo $heading; ?></h1>
+        <p class="lead"><?php echo $lead; ?></p>
+        <?php if( $link ):
+          $post = $link;
+          setup_postdata( $post );
+        ?>
+          <a class="main-image" href="<?php the_permalink(); ?>">
+          <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
+        <?php get_template_part('templates/content', 'img-responsive'); ?>
+        <?php if( $link ): ?>
+          </a>
+        <?php endif; ?>
 
         </div>
     </div>

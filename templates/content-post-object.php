@@ -2,8 +2,6 @@
 $post_objects = get_field('column');
 $row_count = count($post_objects);
 
-echo $row_count;
-
 if( $post_objects ): ?>
     <ul>
     <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>

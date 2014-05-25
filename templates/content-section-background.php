@@ -17,20 +17,14 @@ $background_color = get_sub_field('section_background_color');
     $medwidth = $background_image['sizes'][ $size . '-width' ];
     $medheight = $background_image['sizes'][ $size . '-height' ];
 
-?>
-
-  <style>
-    .single-page-section-<?php echo $r; ?> {
+endif; ?>
+<style>
+  .single-page-section-<?php echo $r; ?> {
+  <?php if( !empty($background_image) ): ?>
       background-image: url(<?php echo $med; ?>);
-    }
-  </style>
-<?php endif; // end background_image if
-
-  if( !empty($background_color) ): ?>
-  <style>
-    .single-page-section-<?php echo $r; ?> {
+  <?php endif; ?>
+  <?php if( !empty($background_color) ): ?>
       background-color: <?php echo $background_color; ?>;
-    }
-  </style>
-
-<?php endif;  // end background_color
+  <?php endif; ?>
+  }
+</style>
