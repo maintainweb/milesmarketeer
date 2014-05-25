@@ -38,9 +38,9 @@ var Roots = {
         positionProperty: 'position'
       });
 
-      $('.navbar-fixed-top').affix({
+      $('.navbar-clear').affix({
         offset: {
-          top: 100
+          top: 200
         }
       });
 

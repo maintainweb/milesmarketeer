@@ -3,16 +3,6 @@ global $r;
 $background_image = get_sub_field('section_background_image');
 $background_color = get_sub_field('section_background_color');
 
-  if( !empty($background_color) ): ?>
-
-  <style>
-    .single-page-section-<?php echo $r; ?> {
-      background-color: $background_color;
-    }
-  </style>
-
-<?php endif;
-
   if( !empty($background_image) ):
 
     // vars
@@ -34,5 +24,13 @@ $background_color = get_sub_field('section_background_color');
       background-image: url(<?php echo $med; ?>);
     }
   </style>
+<?php endif; // end background_image if
 
-<?php endif; ?>
+  if( !empty($background_color) ): ?>
+  <style>
+    .single-page-section-<?php echo $r; ?> {
+      background-color: <?php echo $background_color; ?>;
+    }
+  </style>
+
+<?php endif;  // end background_color
