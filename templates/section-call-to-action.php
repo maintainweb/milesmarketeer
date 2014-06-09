@@ -3,9 +3,10 @@ global $r;
 $text = get_sub_field('call_to_action_text');
 $button = get_sub_field('call_to_action_button');
 $link = get_sub_field('call_to_action_link');
+$section_id = get_sub_field('id');
 
 get_template_part('templates/content', 'section-background'); ?>
-<section class="single-page-section single-page-section-call-to-action single-page-section-<?php echo $r; ?>" <?php get_template_part('templates/data', 'stellar'); ?>>
+<section id="<?php echo $section_id; ?>" class="single-page-section single-page-section-call-to-action single-page-section-<?php echo $r; ?>" <?php get_template_part('templates/data', 'stellar'); ?>>
   <div class="container">
     <div class="row">
       <div class="col-sm-10 col-sm-push-1">

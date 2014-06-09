@@ -6,9 +6,16 @@ $media = get_sub_field('media');
 $image = get_sub_field('image');
 $video = get_sub_field('video');
 $link = get_sub_field('link');
+$section_id = get_sub_field('id');
 
 get_template_part('templates/content', 'section-background'); ?>
-<section class="single-page-section single-page-section-jumbotron single-page-section-<?php echo $r; ?>" <?php get_template_part('templates/data', 'stellar'); ?>>
+<style>
+  .sky-animation {
+    background-size: 75%!important;
+
+  }
+</style>
+<section id="<?php echo $section_id; ?>" class="sky-animation single-page-section single-page-section-jumbotron single-page-section-<?php echo $r; ?>" <?php get_template_part('templates/data', 'stellar'); ?>>
     <div class="container">
       <div class="jumbotron">
         <h1><?php echo $heading; ?></h1>
