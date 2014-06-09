@@ -4,11 +4,12 @@
  */
 function roots_setup() {
   // Make theme available for translation
-  load_theme_textdomain('leoken', get_template_directory() . '/lang');
+  load_theme_textdomain('milesmarketeer', get_template_directory() . '/lang');
 
   // Register wp_nav_menu() menus (http://codex.wordpress.org/Function_Reference/register_nav_menus)
   register_nav_menus(array(
     'primary_navigation' => __('Primary Navigation', 'milesmarketeer'),
+    'footer_navigation' => __('Footer Navigation', 'milesmarketeer'),
   ));
 
   // Add post thumbnails (http://codex.wordpress.org/Post_Thumbnails)
