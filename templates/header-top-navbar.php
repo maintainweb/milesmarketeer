@@ -10,13 +10,16 @@
       <?php get_template_part('templates/content', 'branding'); ?>
       <a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
     </div>
-
     <nav class="collapse navbar-collapse" role="navigation">
       <?php
         if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'));
+          wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav navbar-left'));
         endif;
       ?>
+      <div class="nav navbar-nav navbar-right">
+        <div><a class="btn btn-primary" href="#">Create Account</a></div>
+        <div><a class="btn btn-success" href="#">Login</a></div>
+      </div>
     </nav>
   </div>
 </header>
