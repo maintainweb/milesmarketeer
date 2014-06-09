@@ -2,7 +2,7 @@
   <div class="container">
   	<div class="row">
     	<?php dynamic_sidebar('sidebar-footer'); ?>
-    	<p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+    	<p class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
     </div>
   </div>
 </footer>
