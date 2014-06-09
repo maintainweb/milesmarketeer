@@ -7,8 +7,13 @@ require_once locate_template('/lib/acf.php');          	// Advanced Custom Field
 
 
 function count_columns() {
-	$rows = get_field('column');
+	$rows = get_sub_field('column');
 	$row_count = count($rows);
 
 	echo $row_count;
+}
+
+add_action( 'init', 'my_add_excerpts_to_pages' );
+function my_add_excerpts_to_pages() {
+     add_post_type_support( 'page', 'excerpt' );
 }
