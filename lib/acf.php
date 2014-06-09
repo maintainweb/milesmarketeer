@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 if( function_exists('acf_add_options_sub_page') )
 {
@@ -6,7 +6,7 @@ if( function_exists('acf_add_options_sub_page') )
         'title' => 'Branding Options'
     ));
     acf_add_options_sub_page(array(
-        'title' => 'Social & Analytics'
+        'title' => 'Social & Contact Info'
     ));
     acf_add_options_sub_page(array(
         'title' => 'JavaScript Extras'
