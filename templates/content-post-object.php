@@ -1,5 +1,5 @@
 <?php
-$post_objects = get_field('column');
+$post_objects = get_sub_field('column');
 $row_count = count($post_objects);
 
 if( $post_objects ): ?>
@@ -12,5 +12,6 @@ if( $post_objects ): ?>
         </li>
     <?php endforeach; ?>
     </ul>
+    <?php echo $row_count; ?>
     <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 <?php endif;
