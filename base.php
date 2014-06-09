@@ -17,7 +17,7 @@
     }
   ?>
 
-  <div class="wrap container-fluid" role="document">
+  <div class="wrap container<?php if ( is_page_template('template-onepagelayout.php') ) { ?>-fluid<?php } ?>" role="document">
     <div class="content row">
       <main class="main <?php echo roots_main_class(); ?>" role="main">
         <?php include roots_template_path(); ?>
