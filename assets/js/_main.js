@@ -45,7 +45,7 @@ var Roots = {
       // Bootstrap Affix
       $('.navbar-clear').affix({
         offset: {
-          top: 200
+          top: 150
         }
       });
 
