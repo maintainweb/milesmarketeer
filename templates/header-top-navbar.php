@@ -12,10 +12,19 @@
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <?php
-        if (has_nav_menu('primary_navigation')) :
+        if (is_page_template('template-onepagelayout.php')) { ?>
+          <ul id="nav-onepagelayout" class="nav navbar-nav navbar-left">
+            <?php if( have_rows('sections') ): while ( have_rows('sections') ) : the_row(); ?>
+            <?php $section_id = get_sub_field('id'); ?>
+            <li class="nav-<?php echo $section_id; ?>"><a href="#<?php echo $section_id; ?>"><?php echo $section_id; ?></a></li>
+            <?php endwhile; ?>
+          </ul>
+        <?php else : ?>
+          <?php // no sections found ?>
+        <?php endif; ?>
+        <?php } elseif (has_nav_menu('primary_navigation')) {
           wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav navbar-left'));
-        endif;
-      ?>
+        } ?>
       <div class="nav navbar-nav navbar-right">
         <div><a class="btn btn-primary" href="#">Create Account</a></div>
         <div><a class="btn btn-success" href="#">Login</a></div>
