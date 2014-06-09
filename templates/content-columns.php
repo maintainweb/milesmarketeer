@@ -11,7 +11,7 @@ if( $post_objects ): ?>
     <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
         <?php setup_postdata($post); ?>
         <div class="<?php echo $classes; ?>">
-            <?php get_template_part('templates/content', 'featured-image'); ?>
+            <a href="<?php the_permalink(); ?>"><?php get_template_part('templates/content', 'featured-image'); ?></a>
             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <?php the_excerpt(); ?>
         </div>
