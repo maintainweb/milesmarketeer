@@ -22,6 +22,8 @@ var Roots = {
   // All pages
   common: {
     init: function() {
+      /*
+      // Sequence.js
       var options = {
         autoPlay: true,
         cycle: true,
@@ -29,7 +31,9 @@ var Roots = {
         autoPlayDelay: 4000
       };
       var sequence = $("#sequence").sequence(options).data("sequence");
+      */
 
+      // Stellar.js
       $.stellar({
         horizontalOffset: 0,
         verticalOffset: 0,
@@ -38,11 +42,35 @@ var Roots = {
         positionProperty: 'position'
       });
 
+      // Bootstrap Affix
       $('.navbar-clear').affix({
         offset: {
           top: 200
         }
       });
+
+      // Smooth Scroll
+      $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') || location.hostname === this.hostname) {
+
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                 if (target.length) {
+                   $('html,body').animate({
+                       scrollTop: target.offset().top
+                  }, 1000);
+                  return false;
+              }
+          }
+      });
+
+      $('.ginput_container').find('ul.gfield_checkbox').each(function () {
+       $(this).attr('class', 'checkbox');
+      });
+      $('.ginput_container ul.gfield_checkbox').find('li').each(function () {
+       $(this).attr('class', 'checkbox-inline');
+      });
+      $('#gform_submit_button_2').addClass('btn btn-warning pull-right');
 
     }
   },
