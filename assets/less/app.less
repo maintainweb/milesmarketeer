@@ -157,6 +157,44 @@ section.single-page-section {
       margin-top: -(@content-spacing-top * 1.0);
       padding-top: (@content-spacing-top * 1.0);
    }
+   &:after {
+    content: " ";
+    display: block;
+    height: 100px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*background-color: #88c9ef;*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(136, 201, 239, 1.00)), to(rgba(136, 201, 239, 0.00)));
+    background-image: -webkit-linear-gradient(top, rgba(136, 201, 239, 1.00), rgba(136, 201, 239, 0.00));
+    background-image: -moz-linear-gradient(top, rgba(136, 201, 239, 1.00), rgba(136, 201, 239, 0.00));
+    background-image: -o-linear-gradient(top, rgba(136, 201, 239, 1.00), rgba(136, 201, 239, 0.00));
+    background-image: -ms-linear-gradient(top, rgba(136, 201, 239, 1.00), rgba(136, 201, 239, 0.00));
+    background-image: linear-gradient(top, rgba(136, 201, 239, 1.00), rgba(136, 201, 239, 0.00));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#88c9ef', EndColorStr='#88c9ef');
+   }
+   &:before {
+    content: " ";
+    display: block;
+    height: 100px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*background-color: #88c9ef;*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(136, 201, 239, 0.00)), to(rgba(136, 201, 239, 1.00)));
+    background-image: -webkit-linear-gradient(top, rgba(136, 201, 239, 0.00), rgba(136, 201, 239, 1.00));
+    background-image: -moz-linear-gradient(top, rgba(136, 201, 239, 0.00), rgba(136, 201, 239, 1.00));
+    background-image: -o-linear-gradient(top, rgba(136, 201, 239, 0.00), rgba(136, 201, 239, 1.00));
+    background-image: -ms-linear-gradient(top, rgba(136, 201, 239, 0.00), rgba(136, 201, 239, 1.00));
+    background-image: linear-gradient(top, rgba(136, 201, 239, 0.00), rgba(136, 201, 239, 1.00));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#88c9ef', EndColorStr='#88c9ef');
+   }
    .jumbotron {
     .text-center;
       .main-image {
