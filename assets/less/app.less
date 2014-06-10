@@ -299,8 +299,14 @@ section.single-page-section {
 
 .content-info {
   padding-top: round(@content-spacing-top * 0.3);
-  //padding-bottom: round(@content-spacing-bottom * 2);
+  background-image: url(/wp-content/uploads/clouds-seamless-background-824-300x180.jpg);
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: contain;
   margin-bottom: 0;
+  .footer-widget-wrap {
+    padding-bottom: round(@content-spacing-top * 0.3);
+  }
   section {
     h3 {
       padding-top: 0;
@@ -309,32 +315,81 @@ section.single-page-section {
   }
   .navbar-footer {
     clear: left;
+    background-color: @gray-lighter;
+  }
+}
+
+body.home {
+  .content {
+    padding-bottom: 0;
+  }
+  .content-info {
+    background-image: none!important;
   }
 }
 
 /* ==========================================================================
-   Gravity Forms => http://roots.io/style-gravity-forms-with-bootstrap/
+   Gravity Forms
+   See: http://roots.io/style-gravity-forms-with-bootstrap/
    ========================================================================== */
+.list-unstyled {
+  list-style: none!important;
+}
 
 
-.gform_wrapper ul {
-  .list-unstyled();
+
+.gform_wrapper {
+  ul {
+    margin: 0;
+    padding: 0;
+    .list-unstyled();
+    li {
+      .form-group();
+      .list-unstyled();
+      margin-right: 20px;
+    }
+  }
+  form {
+    margin-bottom: 0;
+  }
+  .gfield_required {
+    padding-left: 1px;
+    color: @state-danger-text;
+  }
+  .col-sm-10.col-sm-offset-1 {
+    padding-left: 12px;
+    padding-right: 27px;
+  }
 }
-.gform_wrapper li {
-  .form-group();
+
+.gform_footer {
+  .center-block();
+  .text-center();
 }
-.gform_wrapper form {
-  margin-bottom: 0;
-}
-.gform_wrapper .gfield_required {
-  padding-left: 1px;
-  color: @state-danger-text;
-}
+
 .ginput_container input,
 .ginput_container select,
 .ginput_container textarea {
   .form-control();
 }
+
+
+.ginput_container .checkbox, .ginput_container .gfield_radio {
+  li {
+    display: inline-block;
+  }
+  input[type="checkbox"], input[type="radio"] {
+    margin-left: 0;
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+  }
+  label {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
 .ginput_container textarea {
   height: auto;
 }
