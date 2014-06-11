@@ -7,8 +7,11 @@ if( have_rows('sections') ):
         if( get_row_layout() == 'jumbotron' ):
         	get_template_part('templates/section', 'jumbotron');
        	endif;
-        if( get_row_layout() == 'banner' ):
-        	get_template_part('templates/section', 'banner');
+        if( get_row_layout() == 'html' ):
+            get_template_part('templates/section', 'html');
+        endif;
+        if( get_row_layout() == 'form' ):
+            get_template_part('templates/section', 'form');
         endif;
         if( get_row_layout() == 'sequence' ):
         	get_template_part('templates/content', 'sequence');
@@ -21,11 +24,11 @@ if( have_rows('sections') ):
  		endif;
  	$r++;
     endwhile;
- 
+
 else :
- 
+
     // no layouts found
- 
+
 endif;
- 
+
 ?>
