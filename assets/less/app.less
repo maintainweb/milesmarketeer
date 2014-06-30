@@ -3,7 +3,7 @@
    ========================================================================== */
 
 @import "bootstrap/bootstrap.less";
-@import "sequence.less";
+//@import "sequence.less";
 
 
 /* Color Mixins */
@@ -78,6 +78,62 @@
   .animation(sky-animation 50s linear infinite alternate);
 }
 
+
+// WebKit
+@-webkit-keyframes paper-airplane-animation {
+  from  { top: -20%; left: 0; }
+  to    { top: 70%; left: 200%;}
+}
+
+// Spec and IE10+
+@keyframes paper-airplane-animation {
+  from  { top: -20%; left: 0; }
+  to    { top: 70%; left: 200%; }
+}
+
+.paper-airplane-animation {
+  .animation(paper-airplane-animation 25s linear infinite normal);
+}
+
+.paper-airplane-animation {
+  background-image: url(/wp-content/uploads/paper-airplane-guy-banner-book.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+}
+
+// WebKit
+@-webkit-keyframes airplane-animation {
+  from  { top: 50%; right: -20%; }
+  to    { top: -20%; right: 100%;}
+}
+
+// Spec and IE10+
+@keyframes airplane-animation {
+  from  { top: 50%; right: -20%; }
+  to    { top: -20%; right: 100%; }
+}
+
+.airplane-animation {
+  .animation(airplane-animation 40s linear infinite normal);
+}
+
+.airplane-animation {
+  background-image: url(/wp-content/uploads/airplane-guy-banner-first-class.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 1060;
+}
 /* ==========================================================================
    Base
    ========================================================================== */
@@ -102,7 +158,7 @@ body.singular {
 
 .banner {
    &.navbar-clear {
-      background-color: fade(@navbar-clear-bg, 40%);
+      background-color: fade(@navbar-clear-bg, 90%);
       .transition(0.5s 0 all ease);
       &.affix {
          background-color: fade(@navbar-clear-bg, 95%);
@@ -125,10 +181,10 @@ body.singular {
       background-color: transparent;
    }
    .navbar-left {
-      width: 60%;
+      width: 50%;
    }
    .navbar-right {
-      width: 20%;
+      width: 25%;
       div {
         display: inline-block;
         padding-top: (@navbar-padding-vertical - (@font-size-base * 0.5));
@@ -210,8 +266,31 @@ section.single-page-section {
       }
       div {
         .text-center;
+        img {
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
     }
+   }
+   &.single-page-section-html {
+    .container {
+      position: relative;
+      z-index: 1;
+      padding-top: (@padding-large-vertical * 2);
+      padding-bottom: (@padding-large-vertical * 2);
+      .text-center;
+      h2 {
+        padding-bottom: 40px;
+      }
+      div {
+        .text-center;
+      }
+    }
+   }
+   &.single-page-section-jumbotron {
+    overflow-x: hidden!important;
+    position: relative;
    }
    .jumbotron {
     padding-top: 0;
@@ -339,6 +418,7 @@ body.home {
 
 
 .gform_wrapper {
+  max-width: 100%!important;
   ul {
     margin: 0;
     padding: 0;
@@ -369,7 +449,9 @@ body.home {
 
 .ginput_container input,
 .ginput_container select,
-.ginput_container textarea {
+.ginput_container textarea,
+.login-username .input,
+.login-password .input {
   .form-control();
 }
 
@@ -395,7 +477,8 @@ body.home {
 }
 .gform_button,
 .gform_next_button,
-.gform_previous_button {
+.gform_previous_button,
+.button-primary {
   .btn();
   .btn-primary();
 }
@@ -437,8 +520,23 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    Media Queries
    ========================================================================== */
 
-@media (min-width: @screen-sm-min) { }
+@media (min-width: @screen-sm-min) {
+.banner {
+   &.navbar-clear {
+      background-color: fade(@navbar-clear-bg, 40%);
+      .transition(0.5s 0 all ease);
+      &.affix {
+         background-color: fade(@navbar-clear-bg, 95%);
+         .transition(0.5s 0 all ease);
+      }
+   }
+ }
+}
 
-@media (min-width: @screen-md-min) { }
+@media (min-width: @screen-md-min) {
 
-@media (min-width: @screen-lg-min) { }
+}
+
+@media (min-width: @screen-lg-min) {
+
+}

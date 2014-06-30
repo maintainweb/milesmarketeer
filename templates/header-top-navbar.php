@@ -16,18 +16,26 @@
           <ul id="nav-onepagelayout" class="nav navbar-nav navbar-left">
             <?php if( have_rows('sections') ): while ( have_rows('sections') ) : the_row(); ?>
             <?php $section_id = get_sub_field('id'); ?>
-            <li class="nav-<?php echo $section_id; ?>"><a href="#<?php echo $section_id; ?>"><?php echo $section_id; ?></a></li>
+            <?php $section_id_mod = str_replace("-", " ", $section_id); ?>
+            <li class="nav-<?php echo $section_id; ?>"><a href="#<?php echo $section_id; ?>"><?php echo $section_id_mod; ?></a></li>
             <?php endwhile; ?>
+            <li class="visible-xs hidden-sm hidden-md hidden-lg"><a class="" href="/create-account/">Create Account</a></li>
+            <li class="visible-xs hidden-sm hidden-md hidden-lg"><a class="" href="/login/">Login</a></li>
           </ul>
         <?php else : ?>
           <?php // no sections found ?>
         <?php endif; ?>
         <?php } elseif (has_nav_menu('primary_navigation')) {
-          wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav navbar-left'));
+          wp_nav_menu(array(
+                      'theme_location' => 'primary_navigation',
+                      'menu_class' => 'nav navbar-nav navbar-left',
+                      'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s<li class="visible-xs hidden-sm hidden-md hidden-lg"><a class="" href="/create-account/">Create Account</a></li>
+            <li class="visible-xs hidden-sm hidden-md hidden-lg"><a class="" href="/login/">Login</a></li></ul>',
+                      ));
         } ?>
-      <div class="nav navbar-nav navbar-right">
-        <div><a class="btn btn-primary" href="#">Create Account</a></div>
-        <div><a class="btn btn-success" href="#">Login</a></div>
+      <div class="hidden-xs nav navbar-nav navbar-right">
+        <div><a class="btn btn-primary" href="/create-account/">Create Account</a></div>
+        <div><a class="btn btn-success" href="/login/">Login</a></div>
       </div>
     </nav>
   </div>

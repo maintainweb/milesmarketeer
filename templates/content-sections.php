@@ -10,11 +10,8 @@ if( have_rows('sections') ):
         if( get_row_layout() == 'html' ):
             get_template_part('templates/section', 'html');
         endif;
-        if( get_row_layout() == 'form' ):
-            get_template_part('templates/section', 'form');
-        endif;
         if( get_row_layout() == 'sequence' ):
-        	get_template_part('templates/content', 'sequence');
+        	get_template_part('templates/section', 'sequence');
         endif;
         if( get_row_layout() == 'call_to_action' ):
         	get_template_part('templates/section', 'call-to-action');
