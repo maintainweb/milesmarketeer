@@ -34,8 +34,13 @@
                       ));
         } ?>
       <div class="hidden-xs nav navbar-nav navbar-right">
+      <?php if ( is_user_logged_in() ) { ?>
+        <div><a class="btn btn-primary" href="/my-account/">My Account</a></div>
+      <?php } else { ?>
         <div><a class="btn btn-primary" href="/create-account/">Create Account</a></div>
         <div><a class="btn btn-success" href="/login/">Login</a></div>
+      <?php } ?>
+
       </div>
     </nav>
   </div>
